@@ -47,8 +47,6 @@ public class SocketService extends Service {
 
     @Override
     public void onDestroy() {
-
-        Log.d("service", "socket service destroy!");
         stop = true;
         if (socketReceiveThread.isAlive()) {
             socketReceiveThread.interrupt();
@@ -63,6 +61,9 @@ public class SocketService extends Service {
         }
     }
 
+    /**
+     * Socket 数据接收线程
+     */
     private class SocketReceiveThread extends Thread {
         private StringBuilder str = new StringBuilder();
         private Set<String> set = new HashSet<>();
@@ -71,13 +72,11 @@ public class SocketService extends Service {
 
         @Override
         public void run() {
-            Log.d("service", "socket service - SocketReceiveThread::run");
             try {
-                clientSocket = new Socket(Constants.IntetADDRESS, Constants.IntetPORT);
+                clientSocket = new Socket(Constants.INTET_ADDRESS, Constants.INTET_PORT);
                 clientSocket.setSoTimeout(5 * 1000);
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("SSSSS");
             }
             while (!stop) {
                 // 读取输入的数据(阻塞读)

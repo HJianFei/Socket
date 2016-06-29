@@ -1,6 +1,8 @@
 package com.hjf.admin.socket.entity;
 
-public class Info {
+import java.io.Serializable;
+
+public class Info implements Serializable {
 
     // 数据长度
     private String dataLength;

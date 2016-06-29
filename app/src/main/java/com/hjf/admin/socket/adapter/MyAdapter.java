@@ -14,6 +14,8 @@ import java.util.List;
 
 /**
  * Created by HJianFei on 2016-6-16.
+ *
+ * @description listView 的适配器 用于界面数据的填充显示
  */
 public class MyAdapter extends BaseAdapter {
 

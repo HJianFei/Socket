@@ -5,10 +5,21 @@ package com.hjf.admin.socket.constants;
  */
 public class Constants {
 
-
-    public static final String SOCKER_RCV = "com.jia.Socket.ReceiveStr";
+    /**
+     * socket接收校验
+     */
+    public static final String SOCKER_RCV = "com.hjf.Socket.ReceiveStr";
+    /**
+     * 接收标志
+     */
     public static final String RECEIVER_STR = "RcvStr";
-    public static final String IntetADDRESS = "192.168.7.1";
-    public static final int IntetPORT = 25000;
+    /**
+     * 硬件模块WIFI地址
+     */
+    public static final String INTET_ADDRESS = "192.168.7.1";
+    /**
+     * 硬件模块端口号
+     */
+    public static final int INTET_PORT = 25000;
 
 }
